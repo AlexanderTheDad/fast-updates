@@ -1,5 +1,5 @@
 {
   "version": "1.0.7",
   "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v1.0.7/FAST-v1.0.7.zip",
-  "changelog": "Initial release"
+  "changelog": "v1.0.7 Changes:\n\n• Benchmark: Fixed CPU score inconsistency — thread affinity, JIT warmup, dead-code elimination fix\n• Benchmark: GPU workload retuned — proper GPU fence sync, targets ~240 FPS on 2080 Ti class\n• Optimisation Score: Fixed 4 broken Fix links (Startup Programs, GPU P-State, HAGS, Driver Age)\n• Device Cleanup Tool: Fixed download failure (wrong exe name)\n• Update window: Now scrollable for longer changelogs"
 }
