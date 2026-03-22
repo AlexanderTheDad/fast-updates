@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v1.1.0/FAST-v1.1.0.zip",
-  "changelog": "v1.1.0 Changes:\n\n• New: Hardware Upgrade Analyzer — detects your CPU socket, chipset, and DDR type, then shows actionable upgrade paths with best CPU for your platform, balanced GPU suggestions, and RAM guidance\n• New: Platform upgrade recommendation — when your socket ceiling is low, suggests a complete AM5 build with 9800X3D (gaming) or 9950X3D (streaming) with reference specs and pricing\n• New: CyberPowerPC links (US/UK) — non-affiliated, recommended from personal experience\n• Improved: Hardware Rating now uses /10 bars instead of stars — more granular, matches FAST Score aesthetic\n• Improved: GPU tiers recalibrated — 4080 SUPER moved to tier 8, 9900K/KF moved to tier 6\n• Improved: Star-to-bar colour gradient — red (1) → orange → amber → green → cyan (10)\n• Improved: GPU upgrade suggestions are now practical — balanced to CPU capability, won't suggest a 5090 for a 6/10 CPU\n• Fixed: CPU benchmark dead-code elimination — NoOptimization attribute prevents JIT from inflating scores\n• Fixed: GPU TDR crash on older cards — added 2-second wake-up phase before heavy rendering\n• Fixed: Benchmark score calibration — GPU reference matched to 4080 SUPER, GPU sub-weights 80/20 FPS/variance\n• Fixed: Importance labels — GPU now MED for CPU-bound, Memory MED and Storage LOW for GPU-bound"
+  "version": "1.1.1",
+  "download_url": "https://github.com/AlexanderTheDad/FAST/releases/tag/v1.1.1",
+  "changelog": "First production release — 2-tier licensing, Gumroad integration, Windows Debloat moved to Essential."
 }
