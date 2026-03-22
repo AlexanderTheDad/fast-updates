@@ -1,5 +1,5 @@
 {
-  "version": "1.1.1",
-  "download_url": "https://github.com/AlexanderTheDad/FAST/releases/tag/v1.1.1",
+  "version": "1.1.2",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/tag/v1.1.2",
   "changelog": "First production release — 2-tier licensing, Gumroad integration, Windows Debloat moved to Essential."
 }
