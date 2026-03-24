@@ -1,5 +1,5 @@
 {
-  "version": "1.1.4",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v1.1.4/FAST-v1.1.4.zip",
-  "changelog": "Cache-pressure CPU benchmark (V-Cache advantage), monitor Hz validation & firmware lookup, ExitLag guide, Fortnite nav restructure, code quality audit fixes."
+  "version": "1.1.5",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v1.1.5/FAST-v1.1.5.zip",
+  "changelog": "Inline tools (TimerResolutionTester & DeviceCpuInterruptChecker run built-in, no more Smart App Control blocks), download button crash protection, P-State iGPU warning with copyable registry path, GPU subkey detection fix, XMP/EXPO speed-only fallback for unrecognised part numbers."
 }
