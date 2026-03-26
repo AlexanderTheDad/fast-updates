@@ -1,5 +1,5 @@
 {
-  "version": "1.1.6",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v1.1.6/FAST-v1.1.6.zip",
-  "changelog": "Benchmark consistency overhaul: removed core affinity pinning (+15% CPU recovery), 3s warmup discard, GC-pinned buffers, L3 cache flush between tests. Score history shows raw measurements (tps, GB/s, ns, FPS). L3 Cache renamed to Cache Pressure. Recalibrated CPU (135K) and L3 (35 GB/s) references."
+  "version": "2.0.0",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v2.0.0/FAST-v2.0.0.zip",
+  "changelog": "Unified Edition: single app with license-gated content replacing separate editions. FAST Score benchmark, Fortnite Log Analyzer, Driver Intelligence, Monitor Advisor, Streaming section, Profile export/import. Full code quality audit with 20 files fixed: event handler leaks, thread safety, error handling, locale bugs, resource disposal."
 }
