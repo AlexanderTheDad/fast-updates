@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v2.1.0/FAST-v2.1.0.zip",
-  "changelog": "v2.1.0: Complexity modes (Simple/Standard/Expert) with first-run welcome screen. Section landing pages for all 15 nav groups. Hardware Analysis overhaul with inline upgrade paths and fixed system drive detection. NVIDIA/Reflex standardised across 10 games. Run All Safe Tweaks now includes Network. Bug fixes: DNS detection, WMI threading, nav ordering, timer race condition, CSV injection, resource disposal."
+  "version": "2.2.0",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v2.2.0/FAST-v2.2.0.zip",
+  "changelog": "v2.2.0: Visual diagrams throughout, subprocess benchmark, LHM removed (HWiNFO64/RTSS), hardware detection fixes, nav refinements."
 }
