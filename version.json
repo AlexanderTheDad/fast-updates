@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v2.2.0/FAST-v2.2.0.zip",
-  "changelog": "v2.2.0: Visual diagrams throughout, subprocess benchmark, LHM removed (HWiNFO64/RTSS), hardware detection fixes, nav refinements."
+  "version": "3.0.1",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.0.1/FAST-v3.0.1.zip",
+  "changelog": "v3.0.1: Script chain error reporting (per-step success/failure/skip summary), crash-safe atomic file writes with recovery, dead code removal, license filter fixes, extended temp file cleanup."
 }
