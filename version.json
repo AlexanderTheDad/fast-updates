@@ -1,5 +1,5 @@
 {
-  "version": "3.1.1",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.1.1/FAST-v3.1.1.zip",
-  "changelog": "v3.1.1: Fixed VBS/HVCI false positive — hypervisor loaded for WSL2/Docker/anti-cheat no longer incorrectly flags VBS as enabled. Safe mode BCDEdit now explicitly disables VBS at boot level."
+  "version": "3.1.2",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.1.2/FAST-v3.1.2.zip",
+  "changelog": "v3.1.2: Fixed NIC power saving false positive (wake bit no longer required). Fixed SATA SSDs without 'SSD' in model name being misdetected as HDD (now uses MSFT_PhysicalDisk)."
 }
