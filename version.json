@@ -1,5 +1,5 @@
 {
-  "version": "3.1.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.1.0/FAST-v3.1.0.zip",
-  "changelog": "v3.1.0: Safe mode now undoes Max-only tweaks, anti-cheat VBS guard, driver auto-replace prevention, AMD V-Cache Optimizer detection for dual-CCD X3D, GPU scoring for RTX 50/RX 9000, WHEA severity filtering, benchmark reliability, AMD Radeon settings, landing page and nav lock fixes, Bitsum plan recognition."
+  "version": "3.1.1",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.1.1/FAST-v3.1.1.zip",
+  "changelog": "v3.1.1: Fixed VBS/HVCI false positive — hypervisor loaded for WSL2/Docker/anti-cheat no longer incorrectly flags VBS as enabled. Safe mode BCDEdit now explicitly disables VBS at boot level."
 }
