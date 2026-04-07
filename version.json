@@ -1,5 +1,5 @@
 {
-  "version": "3.1.2",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.1.2/FAST-v3.1.2.zip",
-  "changelog": "v3.1.2: Fixed NIC power saving false positive — now uses MSPower_DeviceEnable (same source as Device Manager). Fixed SATA SSDs without 'SSD' in model name being misdetected as HDD (now uses MSFT_PhysicalDisk)."
+  "version": "3.2.1",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.2.1/FAST-v3.2.1.zip",
+  "changelog": "v3.2.1: Polling rate guidance unified across Devices, Fortnite KBM and Controller pages - 1000 Hz safe default, 2000 Hz acceptable on top-tier CPUs, stay below 4000 Hz on Unreal Engine games. Intel APO eligibility detection (CPU > Optimize) for K-SKU 14th gen and Core Ultra. Navbar fix: pinned section accordion now mutually excludes Streaming/Fortnite, and the dark scrollbar track is clickable. Fortnite replay benchmarking flagged as currently broken. Fortnite KBM starting-points description box restructured into sectioned subheaders for readability."
 }
