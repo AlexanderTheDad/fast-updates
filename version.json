@@ -1,5 +1,5 @@
 {
-  "version": "3.3.1",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.3.1/FAST-v3.3.1.zip",
-  "changelog": "v3.3.1: Fix WebView2 false positive in bloat detection -- msedgewebview2 processes (used by SearchHost/Widgets) were incorrectly counted as Edge bloat. Add Refresh button to DETECTED ON YOUR SYSTEM panel on the Debloat page."
+  "version": "3.4.1",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.4.1/FAST-v3.4.1.zip",
+  "changelog": "v3.4.1: Redesigned FAST Score benchmark with 4 sub-metric memory testing (L3 Cache bandwidth + latency, DRAM bandwidth + latency), cache hierarchy explainer, hardware-aware labels, and cleaner home tile. Fixed CPU benchmark freeze on older CPUs and AMD Crash Defender hang. See release notes for full details."
 }
