@@ -1,5 +1,5 @@
 {
-  "version": "3.4.1",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.4.1/FAST-v3.4.1.zip",
-  "changelog": "v3.4.1: Redesigned FAST Score benchmark with 4 sub-metric memory testing (L3 Cache bandwidth + latency, DRAM bandwidth + latency), cache hierarchy explainer, hardware-aware labels, and cleaner home tile. Fixed CPU benchmark freeze on older CPUs and AMD Crash Defender hang. See release notes for full details."
+  "version": "3.4.2",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.4.2/FAST-v3.4.2.zip",
+  "changelog": "v3.4.2: Recalibrated CPU benchmark (v8) with 80/20 hot-cold access pattern -- mirrors real game engines and brings CPU-LIMITED composite in line with real Fortnite FPS ratios. Softened score tier labels so mid-tier hardware reads as Good/Great instead of Fair. Removed storage from composites (no effect on steady-state gaming FPS). Fixed Driver Intelligence download button and routed NVIDIA users to NVCleanstall. Added background license revocation for refunded Gumroad keys. Fixed GameInput score check with a Dismiss mechanism. Tightened DRAM latency label thresholds. Hid GPU-LIMITED ring when GPU benchmark is skipped."
 }
