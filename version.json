@@ -1,5 +1,5 @@
 {
-  "version": "3.4.2",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.4.2/FAST-v3.4.2.zip",
-  "changelog": "v3.4.2: Recalibrated CPU benchmark (v8) with 80/20 hot-cold access pattern -- mirrors real game engines and brings CPU-LIMITED composite in line with real Fortnite FPS ratios. Softened score tier labels so mid-tier hardware reads as Good/Great instead of Fair. Removed storage from composites (no effect on steady-state gaming FPS). Fixed Driver Intelligence download button and routed NVIDIA users to NVCleanstall. Added background license revocation for refunded Gumroad keys. Fixed GameInput score check with a Dismiss mechanism. Tightened DRAM latency label thresholds. Hid GPU-LIMITED ring when GPU benchmark is skipped."
+  "version": "3.5.0",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.5.0/FAST-v3.5.0.zip",
+  "changelog": "v3.5.0: Redesigned home page with visual 1-2-3 workflow (Detect > Automate > Guide), bottleneck-driven Recommended Steps card, consolidated Quick Actions with maintenance, and tighter above-the-fold layout. Renamed Tuning Priority to Bottleneck Analysis and FAST Score to FAST Benchmark throughout. Added SMBIOS UUID and MachineGuid to HWID fingerprint to fix collisions. Fixed iGPU/dGPU mix-up on benchmark card for Optimus laptops. Added Storage guidance for game install location and RAID. Implemented script safety guards, UI guidance improvements, and optimization drift detection. Added opt-in Fortnite FPS sync and energy-saving toggles."
 }
