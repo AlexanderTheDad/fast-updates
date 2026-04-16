@@ -1,5 +1,5 @@
 {
-  "version": "3.5.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v3.5.0/FAST-v3.5.0.zip",
-  "changelog": "v3.5.0: Redesigned home page with visual 1-2-3 workflow (Detect > Automate > Guide), bottleneck-driven Recommended Steps card, consolidated Quick Actions with maintenance, and tighter above-the-fold layout. Renamed Tuning Priority to Bottleneck Analysis and FAST Score to FAST Benchmark throughout. Added SMBIOS UUID and MachineGuid to HWID fingerprint to fix collisions. Fixed iGPU/dGPU mix-up on benchmark card for Optimus laptops. Added Storage guidance for game install location and RAID. Implemented script safety guards, UI guidance improvements, and optimization drift detection. Added opt-in Fortnite FPS sync and energy-saving toggles."
+  "version": "4.0.0",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v4.0.0/FAST-v4.0.0.zip",
+  "changelog": "v4.0.0: Redesigned home page with visual 1-2-3 workflow (Detect > Automate > Guide), bottleneck-driven Recommended Steps card, and above-the-fold layout. Scripts now show a scope summary before running. New drift detection system alerts when tweaks have been undone. RTX 50 series HAGS/DLSS 4 support. Renamed Tuning Priority to Bottleneck Analysis and FAST Score to FAST Benchmark. HWID collision fix (SMBIOS UUID + MachineGuid). iGPU/dGPU fix for Optimus laptops. Storage guidance, script safety improvements, new UI guidance sections. Fortnite FPS sync and energy-saving toggles."
 }
