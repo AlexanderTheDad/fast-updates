@@ -1,5 +1,5 @@
 {
-  "version": "4.0.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v4.0.0/FAST-v4.0.0.zip",
-  "changelog": "v4.0.0: Redesigned home page with visual 1-2-3 workflow (Detect > Automate > Guide), bottleneck-driven Recommended Steps card, and above-the-fold layout. Scripts now show a scope summary before running. New drift detection system alerts when tweaks have been undone. RTX 50 series HAGS/DLSS 4 support. Renamed Tuning Priority to Bottleneck Analysis and FAST Score to FAST Benchmark. HWID collision fix (SMBIOS UUID + MachineGuid). iGPU/dGPU fix for Optimus laptops. Storage guidance, script safety improvements, new UI guidance sections. Fortnite FPS sync and energy-saving toggles."
+  "version": "4.0.1",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v4.0.1/FAST-v4.0.1.zip",
+  "changelog": "v4.0.1: Patch release. UI polish: System Score tile now has a dynamic border that tracks the ring color and glows silver at 100, with less-cramped internal spacing. Home pipeline callouts (Windows OS, CPU, Memory, GPU, Network, Storage, Devices) are now clickable again. Fixes FnAudio page leak that let non-Fortnite licensees access paid Audio content. Hardens null guards around Process.Start for powercfg detection and the game detection continuation. ExpandNavGroup re-applies the dimmed foreground to license-locked nav items when a group is expanded. FastPowerPlan installer no longer hangs at a Read-Host prompt when launched under -Auto. LoadComplexityLevel logs parse failures instead of silently defaulting. Adds NVIDIA 596.21 Game Ready Driver to driver intelligence."
 }
