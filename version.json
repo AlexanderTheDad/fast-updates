@@ -1,6 +1,6 @@
 {
-  "version": "6.4.0",
-  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v6.4.0/FAST-win-Setup.zip",
+  "version": "6.5.0",
+  "download_url": "https://github.com/AlexanderTheDad/fast-updates/releases/download/v6.5.0/FAST-win-Setup.zip",
   "requires_installer": true,
-  "changelog": "FAST v6 is a major upgrade with automatic updates.\n\nRun the installer once to enroll - every future update applies silently in the background, no more SmartScreen warnings on each release.\n\nLatest release: v6.4.0. Run the installer once to migrate."
+  "changelog": "FAST v6 is a major upgrade with automatic updates.\n\nRun the installer once to enroll - every future update applies silently in the background, no more SmartScreen warnings on each release.\n\nLatest release: v6.5.0. Run the installer once to migrate."
 }
