@@ -13,7 +13,8 @@
     "A0F4755C-D3AC4E84-81866C9A-0B9E08C4",
     "1A6C4-F685F-CC157-F7BCB",
     "D4A8F-995E3-84D5E-AED0B",
-    "A4018-06498-26597-7C714"
+    "A4018-06498-26597-7C714",
+    { "key": "FAST-TECH-9X3D-ATD-2026", "reason": "replaced", "revoked_at": "2026-09-05" }
   ],
-  "updated": "2026-08-25"
+  "updated": "2026-09-05"
 }
