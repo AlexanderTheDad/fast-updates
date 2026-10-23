@@ -29,10 +29,16 @@
     "SECURITY ITEMS ALSO HAVE:",
     "  audience - who is affected, in plain words; say so when ordinary gaming PCs are not",
     "  action   - optional, what to do (update the browser, rotate keys). Security only.",
+    "PROBLEMS MAY ALSO HAVE:",
+    "  fixed_in - optional, what fixes it, copied from the vendor's own page, never worked out:",
+    "             { nvidia_driver: one GeForce driver per branch, e.g. [616.56, 610.88],",
+    "               windows_builds: build.revision per Windows version, e.g. [26100.7019] }.",
+    "             FAST compares them with the PC in code and says it has the fix or needs it",
+    "             (PcNews.FixStatus), only where the applies tags match or applies is empty.",
     "",
     "RULES: no advice in headline or summary; no em dashes; never name a product as the cause of",
     "someone's problem unless its maker said so; never claim anything works with an anti-cheat;",
-    "a single article or a rumour is not news; at most 12 live items."
+    "a single article or a rumour is not news; at most 20 live items."
   ],
   "last_updated": "2026-10-23",
   "items": [
@@ -60,27 +66,31 @@
       "expires": "2026-11-01"
     },
     {
-      "id": "2026-10-21-php2shell-server-flaws",
-      "date": "2026-10-21",
+      "id": "2026-10-20-plex-media-server-plex2shell",
+      "date": "2026-10-20",
       "kind": "problem",
       "category": "security",
       "status": "confirmed",
-      "headline": "Critical PHP flaws nicknamed PHP2Shell are being targeted on web servers",
-      "summary": "PHP released fixes on October 21 for two critical flaws that let attackers run code on web servers running PHP, and security firms report widespread scanning and exploit attempts. The flaws are in server software, not in Windows or games.",
+      "headline": "Attackers are taking over older Plex Media Server installs to run crypto miners",
+      "summary": "Four chained flaws in Plex Media Server 1.43.2 and older, nicknamed Plex2Shell, let an attacker take over a server that can be reached from the internet without signing in. Attacks began on October 17 and installed crypto miners and proxy software, and the US agency CISA now lists the flaws as exploited. Plex fixed them in version 1.43.3.",
       "applies": [],
       "sources": [
         {
-          "name": "PHP security advisory",
-          "url": "https://www.php.net/archive/2026.php#2026-10-21-5"
+          "name": "CISA Known Exploited Vulnerabilities",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
         },
         {
           "name": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/"
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-hackers-chain-plex-flaws-in-plex2shell-attacks-to-breach-servers/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
         }
       ],
-      "audience": "Website owners and hosting providers running PHP on their servers. Ordinary gaming PCs are not affected.",
-      "action": "Nothing to do on a gaming PC.",
-      "expires": "2026-10-31"
+      "audience": "Anyone running Plex Media Server version 1.43.2 or older on a PC or home server that can be reached from the internet. Watching through the Plex app alone is not affected.",
+      "action": "Update Plex Media Server to the newest version from Plex.",
+      "expires": "2026-11-19"
     },
     {
       "id": "2026-10-13-windows-shell-exploited-flaw",
@@ -105,7 +115,33 @@
       ],
       "audience": "Every Windows PC that has not yet installed the October 13, 2026 security update or a later one.",
       "action": "Keep Windows updated: open Windows Update and install the latest security update if it is waiting.",
+      "fixed_in": {
+        "windows_builds": [
+          "26100.9711",
+          "26200.9711",
+          "26300.9711"
+        ]
+      },
       "expires": "2026-11-12"
+    },
+    {
+      "id": "2026-10-13-windows-11-24h2-home-pro-end-of-updates",
+      "date": "2026-10-13",
+      "kind": "release",
+      "headline": "Windows 11 24H2 Home and Pro no longer get updates, and 26H2 now reaches every 24H2 PC",
+      "summary": "Microsoft stopped monthly security and quality updates for the Home and Pro editions of Windows 11 version 24H2 on October 13, 2026. Version 26H2, the Windows 11 2026 Update, has now reached full availability through Windows Update for PCs on 24H2 and 25H2.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Windows release health",
+          "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
+        },
+        {
+          "name": "Windows message center",
+          "url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center"
+        }
+      ],
+      "expires": "2026-10-27"
     },
     {
       "id": "2026-09-30-nvidia-driver-security-bulletin",
@@ -125,6 +161,13 @@
         }
       ],
       "audience": "PCs with an NVIDIA graphics card on a GeForce driver older than 616.56, 610.88 or 582.78, depending on the branch. An attacker must already be able to run a program on the PC.",
+      "fixed_in": {
+        "nvidia_driver": [
+          "616.56",
+          "610.88",
+          "582.78"
+        ]
+      },
       "expires": "2026-10-30"
     }
   ]
