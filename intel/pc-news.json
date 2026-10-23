@@ -37,27 +37,75 @@
   "last_updated": "2026-10-23",
   "items": [
     {
-      "id": "2026-10-22-nvidia-621-01-black-screens",
+      "id": "2026-10-22-capcom-id-breach",
       "date": "2026-10-22",
       "kind": "problem",
-      "category": "stability",
-      "status": "reported",
-      "headline": "Users report black screens and driver crashes after NVIDIA driver 621.01",
-      "summary": "Users on NVIDIA's own driver forum and in press coverage describe the screen freezing or going black for a few seconds, often while a video plays in Chrome or Edge, with nvlddmkm Event ID 153 errors. Some also report G-SYNC stutter and S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA lists no open issues for this driver yet.",
+      "category": "security",
+      "status": "confirmed",
+      "headline": "Capcom confirms a breach of CAPCOM ID that exposed about 11.7 million account emails",
+      "summary": "Capcom says attackers got into CAPCOM ID, the account system behind its websites and some online games, and took email addresses and sign-in details such as the last login time and IP address for about 11.7 million accounts. Capcom says card details were not involved and it has found no sign that passwords were taken; it reset 196 accounts whose passwords the attackers changed.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Capcom statement",
+          "url": "https://www.capcom.co.jp/ir/english/news/html/e261022.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/"
+        }
+      ],
+      "audience": "Anyone with a CAPCOM ID account. The PC itself is not affected.",
+      "action": "Be wary of emails or messages about your Capcom account, and do not open their links or attachments. Turning on two-factor sign-in where you can is a sensible precaution.",
+      "expires": "2026-11-01"
+    },
+    {
+      "id": "2026-10-21-php2shell-server-flaws",
+      "date": "2026-10-21",
+      "kind": "problem",
+      "category": "security",
+      "status": "confirmed",
+      "headline": "Critical PHP flaws nicknamed PHP2Shell are being targeted on web servers",
+      "summary": "PHP released fixes on October 21 for two critical flaws that let attackers run code on web servers running PHP, and security firms report widespread scanning and exploit attempts. The flaws are in server software, not in Windows or games.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "PHP security advisory",
+          "url": "https://www.php.net/archive/2026.php#2026-10-21-5"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/"
+        }
+      ],
+      "audience": "Website owners and hosting providers running PHP on their servers. Ordinary gaming PCs are not affected.",
+      "action": "Nothing to do on a gaming PC.",
+      "expires": "2026-10-31"
+    },
+    {
+      "id": "2026-10-13-windows-shell-exploited-flaw",
+      "date": "2026-10-13",
+      "kind": "problem",
+      "category": "security",
+      "status": "confirmed",
+      "headline": "October's Windows security update fixes a flaw attackers were already using",
+      "summary": "Microsoft's October 13 security update fixes CVE-2026-96951, a Windows Shell flaw that attackers were exploiting to slip past the warning Windows shows on files downloaded from the internet. It needs someone to open a booby-trapped file or link, and the same update fixes two other flaws that were public before the patch.",
       "applies": [
-        "gpu:nvidia"
+        "all"
       ],
       "sources": [
         {
-          "name": "TweakTown",
-          "url": "https://www.tweaktown.com/news/114254/nvidias-new-modern-warfare-4-driver-is-already-drawing-a-wave-of-early-user-complaints/index.html"
+          "name": "Microsoft Security Response Center",
+          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-96951"
         },
         {
-          "name": "NVIDIA GeForce Forums",
-          "url": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/591981/geforce-grd-62101-feedback-thread-released-102126/"
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/"
         }
       ],
-      "expires": "2026-11-21"
+      "audience": "Every Windows PC that has not yet installed the October 13, 2026 security update or a later one.",
+      "action": "Keep Windows updated: open Windows Update and install the latest security update if it is waiting.",
+      "expires": "2026-11-12"
     },
     {
       "id": "2026-09-30-nvidia-driver-security-bulletin",
