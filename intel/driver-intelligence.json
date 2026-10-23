@@ -1,0 +1,330 @@
+{
+  "_comment": [
+    "FAST Driver Intelligence Database",
+    "",
+    "Two independent signals are stored here:",
+    "",
+    "1. Gaming-stability recommendation (per vendor > gpu_family > game):",
+    "     recommended    - the driver version FAST actively recommends for competitive gaming",
+    "     latest_tested  - newest driver the FAST team has bench-verified. MAY be newer than",
+    "                      recommended - that gap is the whole point of the feature, and the",
+    "                      card says so out loud ('newer, but not our pick')",
+    "     latest_known   - newest driver the VENDOR has actually released. Moves whenever the",
+    "                      driver-watch routine sees a new release; latest_tested only moves",
+    "                      when someone benches it. latest_known >= latest_tested always.",
+    "                      The gap between them is what lets the card say 'X is out, we have",
+    "                      not measured it' instead of staying silent about a driver it has",
+    "                      never heard of. Optional - absent, it collapses to latest_tested",
+    "                      and the card says nothing, which is the pre-2026-07-31 behaviour.",
+    "     fallback       - { version, why } the driver to drop back to when the recommended one",
+    "                      misbehaves on a specific rig. Must be older than recommended",
+    "     avoid          - list of driver versions with known gaming regressions",
+    "     notes          - measured evidence for the recommended version and the fault for each",
+    "                      avoid version. See WRITING A NOTE below",
+    "     download_url   - direct link to the recommended driver download page",
+    "",
+    "WRITING A NOTE - a note is EVIDENCE ONLY. It is never the verdict.",
+    "  DriverIntelligence.cs owns the verdict, the headline and the instruction, because those",
+    "  depend on which of the six states the user is in and the same note is reused across",
+    "  more than one of them. A note that says 'avoid this driver' or 'FAST's pick' will read",
+    "  as nonsense in the other state that renders it.",
+    "  Write the note as a sentence fragment that completes both of these:",
+    "    Good verdict   -> 'Why it is our pick: <note>'",
+    "    Update verdict -> 'What you gain: <note>'",
+    "    Avoid verdict  -> 'The fault: <note>'",
+    "  The Hold verdict (added 2026-08-20, and now the DEFAULT - see the Recommendation policy",
+    "  section of hardware-reference.md) renders NO note. It fires when the user is at or above",
+    "  `recommended` and something newer exists that we have not measured, so there is by",
+    "  definition no evidence to show. Its copy is entirely hardcoded. Do not add a note keyed",
+    "  to latest_known hoping it will surface there - it will not.",
+    "  So start lower-case and lead with the consequence to the user, not with what the driver",
+    "  is. Not 'Game Ready Driver (2026-05-26), major branch jump' but 'your FPS drops the",
+    "  longer you play'. Measured numbers second. Cap at 2-3 sentences.",
+    "  Do not repeat what the same page already shows: install steps belong to the Driver Update",
+    "  Flow stepper, the voltage cap has its own card, and the release date is in the driver-age",
+    "  line. Full bench data goes in hardware-reference.md, not in the note.",
+    "",
+    "ONLY TWO KINDS OF NOTE EXIST HERE - do not add a third:",
+    "  - notes[recommended]   shown to users already on it and, via the Update verdict, to",
+    "                         everyone on an older driver",
+    "  - notes[<avoid entry>] shown to users sitting on a known-bad driver",
+    "  Every other version is unreachable by design: anything newer than latest_tested gets",
+    "  hardcoded 'newer than tested' text, and any other older version renders notes[recommended].",
+    "  46 such entries were deleted on 2026-07-31 - they were prose no user could ever see. Do",
+    "  not re-add per-version changelog entries. Version history belongs in hardware-reference.md.",
+    "  fallback deliberately has NO note - its one-line 'why' lives in the field itself.",
+    "",
+    "2. Security advisories (top-level security_advisories block):",
+    "     Curated from NVIDIA PSIRT (github.com/NVIDIA/product-security) and AMD Product",
+    "     Security. Each entry is a single vendor security bulletin that may bundle multiple",
+    "     CVEs. FAST flags an advisory as unpatched when the user's installed driver is",
+    "     OLDER than fixed_in_version. Newer driver branches are assumed to forward-port",
+    "     the fix (NVIDIA's standard practice). The signal is separate from the gaming",
+    "     recommendation - a user on the gaming-recommended driver may still see a",
+    "     security warning if they are behind on bulletins, and vice versa.",
+    "",
+    "GPU family matching is done by substring against the detected GPU name.",
+    "Example: 'RTX 40' matches 'NVIDIA GeForce RTX 4070', 'RTX 4090', etc.",
+    "",
+    "Driver versions use the short NVIDIA format (e.g. '595.97') or AMD format (e.g. '26.3.1').",
+    "NVIDIA versions are converted from WMI format (32.0.15.9597 -> 595.97) at detection time.",
+    "",
+    "PUBLISHING - this file ships ONLY with the app. There is no out-of-band channel.",
+    "  It is an embedded resource. DriverIntelligence.LoadDatabase reads it from the",
+    "  assembly and from nowhere else. Editing it reaches users when the change is merged",
+    "  and a release goes out - the same way every other change reaches them.",
+    "",
+    "  DO NOT BUILD A FETCH-FROM-fast-updates UPDATER FOR THIS FILE. That has been built",
+    "  and deleted once already (added 9dfa7cb 2026-07-31, removed e93eedb 2026-08-05),",
+    "  and this note is what was left describing it afterwards - which is how it came to",
+    "  be rebuilt a second time on 2026-08-27 before the history was checked. Read e93eedb",
+    "  before proposing it a third time. Its argument, still true when re-checked on",
+    "  2026-08-27:",
+    "    - Releases ship far faster than this file changes. v9.0.0 through v9.1.2 was four",
+    "      releases in six days; this file changes every 1-3 weeks. The embedded copy is",
+    "      therefore never meaningfully stale, and the gap is covered by an update the",
+    "      user is already offered on launch.",
+    "    - The delivery path never delivered anything. Its publish workflow failed every",
+    "      run on a missing FAST_UPDATES_TOKEN, nothing was ever published, and nobody",
+    "      noticed for five days - because the app degrades silently to the embedded copy.",
+    "    - It costs a credential to rotate and a monitor to watch, to duplicate a delivery",
+    "      path that is already faster.",
+    "  The premise to re-test before reviving it is the release cadence, not the plumbing.",
+    "  If releases ever slow to less often than this file changes, the trade flips.",
+    "",
+    "The weekly driver-watch routine refreshes the gaming notes, the security advisories",
+    "block, and latest_known from upstream vendor sources."
+  ],
+
+  "last_updated": "2026-10-23",
+
+  "security_advisories": {
+    "_comment": [
+      "Severity is the highest CVSS v3.1 base score across the bundled CVEs in the bulletin.",
+      "FAST flags 'unpatched' when installed driver version < fixed_in_version.",
+      "GeForce / Windows scope only - vGPU, Linux, Tesla, datacenter bulletins are excluded.",
+      "Cross-vendor reference: NVIDIA PSIRT at github.com/NVIDIA/product-security."
+    ],
+    "nvidia": [
+      {
+        "id": "5747",
+        "title": "GPU Display Driver - January 2026",
+        "published": "2026-01-28",
+        "severity": "high",
+        "max_cvss": 7.8,
+        "summary": "Kernel-mode driver flaws (use-after-free, integer overflow) in nvlddmkm.sys plus a NULL-pointer dereference in the HD Audio driver. Local low-privilege attacker could escalate to code execution, data tampering, or denial of service.",
+        "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2026/5747/5747.md",
+        "cves": ["CVE-2025-33217", "CVE-2025-33218", "CVE-2025-33237"],
+        "fixed_in_version": "591.59"
+      },
+      {
+        "id": "5703",
+        "title": "GPU Display Driver - October 2025",
+        "published": "2025-10-09",
+        "severity": "high",
+        "max_cvss": 7.8,
+        "summary": "Multiple kernel-mode driver vulnerabilities affecting GeForce on Windows. Local privilege escalation, code execution, and information disclosure.",
+        "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2025/5703/5703.md",
+        "cves": ["CVE-2025-23309", "CVE-2025-23347", "CVE-2025-23352", "CVE-2025-23280", "CVE-2025-23282", "CVE-2025-23300", "CVE-2025-23330", "CVE-2025-23332", "CVE-2025-23345"],
+        "fixed_in_version": "581.42"
+      },
+      {
+        "id": "5670",
+        "title": "GPU Display Driver - July 2025",
+        "published": "2025-07-24",
+        "severity": "high",
+        "max_cvss": 7.8,
+        "summary": "Twelve CVEs covering kernel-mode driver and user-mode component issues. Local attacker could achieve code execution and privilege escalation.",
+        "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2025/5670/5670.md",
+        "cves": ["CVE-2025-23276", "CVE-2025-23283", "CVE-2025-23284", "CVE-2025-23277", "CVE-2025-23278", "CVE-2025-23279", "CVE-2025-23281", "CVE-2025-23285", "CVE-2025-23286", "CVE-2025-23287", "CVE-2025-23288", "CVE-2025-23290"],
+        "fixed_in_version": "577.00"
+      },
+      {
+        "id": "5614",
+        "title": "GPU Display Driver - January 2025",
+        "published": "2025-01-30",
+        "severity": "high",
+        "max_cvss": 7.8,
+        "summary": "Seven CVEs in the kernel-mode display driver. Local privilege escalation and information disclosure.",
+        "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2025/5614/5614.md",
+        "cves": ["CVE-2024-0146", "CVE-2024-0150", "CVE-2024-0147", "CVE-2024-53869", "CVE-2024-53881", "CVE-2024-0131", "CVE-2024-0149"],
+        "fixed_in_version": "572.16"
+      }
+    ],
+    "amd": []
+  },
+
+  "nvidia": {
+    "RTX 50": {
+      "fortnite": {
+        "recommended": "610.47",
+        "latest_tested": "610.47",
+        "latest_known": "621.01",
+        "latest_known_released": "2026-10-21",
+        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
+        "avoid": ["610.74"],
+        "notes": {
+          "610.47": "on a 4080 SUPER it improved frame-time consistency by 38%, and on a 2080 Ti it removed the hard stalls entirely (min FPS 2.1 to 22.7, 1% lows +21%, stutter time -28%). It does shift burst-moment work onto the CPU, so a CPU older than a 9900K or Ryzen 5000 can bottleneck in heavy scenes.",
+          "610.74": "your screen flickers to black and comes back, at the desktop as well as in game. It is this release specifically, not the whole 610 branch."
+        },
+        "download_url": "https://www.nvidia.com/Download/index.aspx"
+      }
+    },
+    "RTX 40": {
+      "fortnite": {
+        "recommended": "610.47",
+        "latest_tested": "610.47",
+        "latest_known": "621.01",
+        "latest_known_released": "2026-10-21",
+        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
+        "avoid": ["610.74", "546.01"],
+        "notes": {
+          "610.47": "on a 4080 SUPER it improved frame-time consistency by 38%, and on a 2080 Ti it removed the hard stalls entirely (min FPS 2.1 to 22.7, 1% lows +21%, stutter time -28%). It does shift burst-moment work onto the CPU, so a CPU older than a 9900K or Ryzen 5000 can bottleneck in heavy scenes.",
+          "610.74": "your screen flickers to black and comes back, at the desktop as well as in game. It is this release specifically, not the whole 610 branch.",
+          "546.01": "your FPS drops the longer you play, and only restarting the game brings it back."
+        },
+        "download_url": "https://www.nvidia.com/Download/index.aspx"
+      }
+    },
+    "RTX 30": {
+      "fortnite": {
+        "recommended": "610.47",
+        "latest_tested": "610.47",
+        "latest_known": "621.01",
+        "latest_known_released": "2026-10-21",
+        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
+        "avoid": ["610.74", "546.01", "537.58"],
+        "notes": {
+          "610.47": "on a 4080 SUPER it improved frame-time consistency by 38%, and on a 2080 Ti it removed the hard stalls entirely (min FPS 2.1 to 22.7, 1% lows +21%, stutter time -28%). It does shift burst-moment work onto the CPU, so a CPU older than a 9900K or Ryzen 5000 can bottleneck in heavy scenes.",
+          "610.74": "your screen flickers to black and comes back, at the desktop as well as in game. It is this release specifically, not the whole 610 branch.",
+          "546.01": "your FPS drops the longer you play, and only restarting the game brings it back.",
+          "537.58": "Fortnite stutter-spikes on RTX 30-series while shaders compile."
+        },
+        "download_url": "https://www.nvidia.com/Download/index.aspx"
+      }
+    },
+    "RTX 20": {
+      "fortnite": {
+        "recommended": "610.47",
+        "latest_tested": "610.47",
+        "latest_known": "621.01",
+        "latest_known_released": "2026-10-21",
+        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
+        "avoid": ["610.74", "546.01"],
+        "notes": {
+          "610.47": "on a 4080 SUPER it improved frame-time consistency by 38%, and on a 2080 Ti it removed the hard stalls entirely (min FPS 2.1 to 22.7, 1% lows +21%, stutter time -28%). It does shift burst-moment work onto the CPU, so a CPU older than a 9900K or Ryzen 5000 can bottleneck in heavy scenes.",
+          "610.74": "your screen flickers to black and comes back, at the desktop as well as in game. It is this release specifically, not the whole 610 branch.",
+          "546.01": "your FPS drops the longer you play, and only restarting the game brings it back."
+        },
+        "download_url": "https://www.nvidia.com/Download/index.aspx"
+      }
+    },
+    "GTX 16": {
+      "fortnite": {
+        "recommended": "610.47",
+        "latest_tested": "610.47",
+        "latest_known": "621.01",
+        "latest_known_released": "2026-10-21",
+        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
+        "avoid": ["610.74"],
+        "notes": {
+          "610.47": "on a 4080 SUPER it improved frame-time consistency by 38%, and on a 2080 Ti it removed the hard stalls entirely (min FPS 2.1 to 22.7, 1% lows +21%, stutter time -28%). It does shift burst-moment work onto the CPU, so a CPU older than a 9900K or Ryzen 5000 can bottleneck in heavy scenes.",
+          "610.74": "your screen flickers to black and comes back, at the desktop as well as in game. It is this release specifically, not the whole 610 branch."
+        },
+        "download_url": "https://www.nvidia.com/Download/index.aspx"
+      }
+    }
+  },
+
+  "amd": {
+    "RX 9": {
+      "fortnite": {
+        "recommended": "26.3.1",
+        "latest_tested": "26.3.1",
+        "latest_known": "26.10.1",
+        "latest_known_released": "2026-10-20",
+        "latest_known_reports": "Nothing yet in the field. AMD lists these itself: on Windows 10 installing it can switch Smart Access Memory off, so check it is still on afterwards; games can crash or time out when another overlay such as Xbox Game Bar opens or closes while AMD's Performance Metrics Overlay is on; on RX 9000 cards using FSR Frame Generation, switching apps can crash or hang the PC; and on RX 7000 cards Assassin's Creed Black Flag Resynced and Valor Mortis can crash or time out.",
+        "fallback": { "version": "25.3.1", "why": "the RDNA 4 launch driver" },
+        "avoid": [],
+        "notes": {
+          "26.3.1": "no known Fortnite regressions on RDNA 4, plus FSR 4.1. Not bench-tested by FAST - this pick tracks AMD's known-issues list, not our own A/B runs."
+        },
+        "download_url": "https://www.amd.com/en/support"
+      }
+    },
+    "RX 7": {
+      "fortnite": {
+        "recommended": "26.3.1",
+        "latest_tested": "26.3.1",
+        "latest_known": "26.10.1",
+        "latest_known_released": "2026-10-20",
+        "latest_known_reports": "Nothing yet in the field. AMD lists these itself: on Windows 10 installing it can switch Smart Access Memory off, so check it is still on afterwards; games can crash or time out when another overlay such as Xbox Game Bar opens or closes while AMD's Performance Metrics Overlay is on; on RX 9000 cards using FSR Frame Generation, switching apps can crash or hang the PC; and on RX 7000 cards Assassin's Creed Black Flag Resynced and Valor Mortis can crash or time out.",
+        "fallback": { "version": "25.3.1", "why": "the previous Adrenalin release" },
+        "avoid": ["24.1.1", "23.12.1"],
+        "notes": {
+          "26.3.1": "no known Fortnite regressions on RDNA 3, and FSR 4.1 is RX 9000-only so you lose nothing here. Not bench-tested by FAST - this pick tracks AMD's known-issues list, not our own A/B runs.",
+          "24.1.1": "black screens mid-game on RX 7900 cards.",
+          "23.12.1": "Fortnite stutter-spikes while shaders compile."
+        },
+        "download_url": "https://www.amd.com/en/support"
+      }
+    },
+    "RX 6": {
+      "fortnite": {
+        "recommended": "26.3.1",
+        "latest_tested": "26.3.1",
+        "latest_known": "26.10.1",
+        "latest_known_released": "2026-10-20",
+        "latest_known_reports": "Nothing yet in the field. AMD lists these itself: on Windows 10 installing it can switch Smart Access Memory off, so check it is still on afterwards; games can crash or time out when another overlay such as Xbox Game Bar opens or closes while AMD's Performance Metrics Overlay is on; on RX 9000 cards using FSR Frame Generation, switching apps can crash or hang the PC; and on RX 7000 cards Assassin's Creed Black Flag Resynced and Valor Mortis can crash or time out.",
+        "fallback": { "version": "25.3.1", "why": "the previous Adrenalin release" },
+        "avoid": ["24.1.1"],
+        "notes": {
+          "26.3.1": "no known Fortnite regressions on RDNA 2. Not bench-tested by FAST - this pick tracks AMD's known-issues list, not our own A/B runs.",
+          "24.1.1": "black screens and driver timeouts on some RX 6000 cards."
+        },
+        "download_url": "https://www.amd.com/en/support"
+      }
+    }
+  },
+
+  "chipset": {
+    "_comment": [
+      "Motherboard chipset packages. SEPARATE from the gaming GPU blocks above and read by a",
+      "different code path (DriverIntelligence.EvaluateChipset), because nothing here is the",
+      "same shape as a GPU family:",
+      "",
+      "  - AMD ships ONE package for every socket. The revision on the X870E page is the same",
+      "    revision offered for B650, X570, B450 and Threadripper, so there is one entry here",
+      "    and not one per socket. Verified 2026-09-25 against AMD's own X870E download page,",
+      "    whose support list runs from A320 through WRX90 at a single revision number.",
+      "  - There is no `recommended`, no `latest_tested` and no `avoid`. Nobody has benched a",
+      "    chipset package, so the card is INFORMATIONAL: it states the installed revision and",
+      "    the published one and stops there. It must never tell anyone to install something,",
+      "    which is the same default-is-Hold posture the GPU engine takes for measured reasons.",
+      "    Adding a `recommended` key here would be claiming evidence that does not exist.",
+      "  - `installed` comes from the uninstall registry, NOT from PnP driver versions. The",
+      "    per-device versions the package installs (GPIO2, I2C, PSP, PPM) each carry their own",
+      "    unrelated numbers and none of them equals the package revision.",
+      "",
+      "latest_known / latest_known_released / latest_known_reports carry the same meaning as in",
+      "the GPU blocks. Since 2026-10-03 the weekly driver watch owns these three fields too,",
+      "read from AMD's own chipset download page; everything else in this block stays human-owned.",
+      "",
+      "SOURCING WARNING: read the vendor page, never a search summary. On 2026-09-25 a search",
+      "summary reported the current AMD package as 8.02.18.557 from March; the vendor page said",
+      "8.08.12.551 from August, two releases and five months newer."
+    ],
+    "amd": {
+      "package_name": "AMD Chipset Software",
+      "latest_known": "8.09.28.1124",
+      "latest_known_released": "2026-10-21",
+      "latest_known_reports": "AMD lists one itself: the Ryzen provisioning package occasionally fails to install or upgrade. Nothing has been reported against it in the field yet.",
+      "download_url": "https://www.amd.com/en/support/download/drivers.html"
+    }
+  }
+}
