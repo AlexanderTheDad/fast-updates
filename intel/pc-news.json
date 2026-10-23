@@ -1,0 +1,83 @@
+{
+  "_comment": [
+    "FAST PC News - the LATEST items on About -> PC News",
+    "",
+    "Written nightly by the news sweep step of the daily-intel-watch scheduled task, committed",
+    "here on main, and published to fast-updates/intel/ by tools/Publish-IntelFeed.ps1, which",
+    "refuses the file if any rule below is broken. FAST also ships this copy and uses whichever",
+    "is newer (PcNewsData.Load). PcNewsFileTests pins the same rules on the shipped copy.",
+    "",
+    "THE PAGE IS FREE AND ONLY INFORMS. An item says what happened, who it affects and where it",
+    "came from. Whether to install or roll back a driver, and what to do about a Windows update,",
+    "is the advice on the paid GPU Drivers and System Score pages, so no item gives it.",
+    "",
+    "FIELDS (every item):",
+    "  id       - stable, unique, lower-case words and hyphens, e.g. 2026-10-21-nvidia-621-01-black-screens",
+    "  date     - yyyy-MM-dd the news happened (not the day the sweep found it)",
+    "  kind     - problem | release",
+    "  category - problems only: stability (crashes, black screens, freezes, games that will not",
+    "             start) | performance (FPS, stutter, latency) | security",
+    "  status   - problems only: confirmed (the vendor, Microsoft or Epic says so) | reported",
+    "             (at least two independent outlets or threads, no vendor statement yet)",
+    "  headline - up to 100 characters, FAST's own words",
+    "  summary  - up to 400 characters, one or two sentences, FAST's own words, consequence first",
+    "  applies  - tags FAST matches against this PC in code, OR'd: all | gpu:nvidia | gpu:amd |",
+    "             gpu:intel | gpu-name:<text in the GPU name, e.g. RTX 50> | cpu:intel | cpu:amd |",
+    "             cpu-name:<text in the CPU name, e.g. i9-14> | game:fortnite | app:obs",
+    "  sources  - [{ name, url }], https only; a reported problem needs two",
+    "  expires  - yyyy-MM-dd, no more than 31 days after date",
+    "SECURITY ITEMS ALSO HAVE:",
+    "  audience - who is affected, in plain words; say so when ordinary gaming PCs are not",
+    "  action   - optional, what to do (update the browser, rotate keys). Security only.",
+    "",
+    "RULES: no advice in headline or summary; no em dashes; never name a product as the cause of",
+    "someone's problem unless its maker said so; never claim anything works with an anti-cheat;",
+    "a single article or a rumour is not news; at most 12 live items."
+  ],
+  "last_updated": "2026-10-23",
+  "items": [
+    {
+      "id": "2026-10-22-nvidia-621-01-black-screens",
+      "date": "2026-10-22",
+      "kind": "problem",
+      "category": "stability",
+      "status": "reported",
+      "headline": "Users report black screens and driver crashes after NVIDIA driver 621.01",
+      "summary": "Users on NVIDIA's own driver forum and in press coverage describe the screen freezing or going black for a few seconds, often while a video plays in Chrome or Edge, with nvlddmkm Event ID 153 errors. Some also report G-SYNC stutter and S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA lists no open issues for this driver yet.",
+      "applies": [
+        "gpu:nvidia"
+      ],
+      "sources": [
+        {
+          "name": "TweakTown",
+          "url": "https://www.tweaktown.com/news/114254/nvidias-new-modern-warfare-4-driver-is-already-drawing-a-wave-of-early-user-complaints/index.html"
+        },
+        {
+          "name": "NVIDIA GeForce Forums",
+          "url": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/591981/geforce-grd-62101-feedback-thread-released-102126/"
+        }
+      ],
+      "expires": "2026-11-21"
+    },
+    {
+      "id": "2026-09-30-nvidia-driver-security-bulletin",
+      "date": "2026-09-30",
+      "kind": "problem",
+      "category": "security",
+      "status": "confirmed",
+      "headline": "NVIDIA fixes high-severity security flaws in its GeForce drivers",
+      "summary": "NVIDIA's September security bulletin lists flaws in its GPU display driver that could let a program already running on a PC gain higher privileges or run code in the kernel. On Windows, GeForce drivers older than 616.56, 610.88 and 582.78, depending on the driver branch, are affected.",
+      "applies": [
+        "gpu:nvidia"
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA security bulletin",
+          "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5861"
+        }
+      ],
+      "audience": "PCs with an NVIDIA graphics card on a GeForce driver older than 616.56, 610.88 or 582.78, depending on the branch. An attacker must already be able to run a program on the PC.",
+      "expires": "2026-10-30"
+    }
+  ]
+}
