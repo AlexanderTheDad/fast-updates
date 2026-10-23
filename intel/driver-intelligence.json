@@ -89,8 +89,10 @@
     "  checked, so a dead feed shows as an old date. See docs/intel-feed-scoping.md.",
     "",
     "The daily intel watch writes only latest_known, latest_known_released and",
-    "latest_known_reports (per GPU family, and in the chipset block) plus last_updated.",
-    "Everything else here, including the notes and the security advisories, is kept by hand."
+    "latest_known_reports (per GPU family, and in the chipset block) plus last_updated, and",
+    "since 2026-10-23 it ADDS new vendor bulletins to security_advisories (newest first). It",
+    "never edits or removes an existing advisory. Everything else here, including the notes,",
+    "is kept by hand."
   ],
 
   "last_updated": "2026-10-23",
@@ -100,9 +102,35 @@
       "Severity is the highest CVSS v3.1 base score across the bundled CVEs in the bulletin.",
       "FAST flags 'unpatched' when installed driver version < fixed_in_version.",
       "GeForce / Windows scope only - vGPU, Linux, Tesla, datacenter bulletins are excluded.",
-      "Cross-vendor reference: NVIDIA PSIRT at github.com/NVIDIA/product-security."
+      "Cross-vendor reference: NVIDIA PSIRT at github.com/NVIDIA/product-security.",
+      "fixed_in_version is the fix in the NEWEST Game Ready branch the bulletin lists for GeForce",
+      "on Windows (616.56 for a bulletin listing 616.56, 610.88 and 582.78); AMD's is the",
+      "Adrenalin release. Every entry's shape is checked by DriverCatalogueIntegrityTests and",
+      "by tools/Publish-IntelFeed.ps1, because a malformed one fails silently in the app."
     ],
     "nvidia": [
+      {
+        "id": "5861",
+        "title": "GPU Display Driver - September 2026",
+        "published": "2026-09-30",
+        "severity": "high",
+        "max_cvss": 7.8,
+        "summary": "A program already running on the PC with ordinary user rights could take full control of it, read or change data, or crash it, through 68 flaws in the GeForce driver for Windows, most of them in the kernel-mode layer.",
+        "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2026/5861/5861.md",
+        "cves": ["CVE-2026-47604", "CVE-2026-47603", "CVE-2026-47602", "CVE-2026-47601", "CVE-2026-47600", "CVE-2026-47597", "CVE-2026-47594", "CVE-2026-47593", "CVE-2026-47592", "CVE-2026-47590", "CVE-2026-47589", "CVE-2026-47586", "CVE-2026-47585", "CVE-2026-47584", "CVE-2026-47583", "CVE-2026-47582", "CVE-2026-47581", "CVE-2026-47580", "CVE-2026-47579", "CVE-2026-47578", "CVE-2026-47577", "CVE-2026-47576", "CVE-2026-47575", "CVE-2026-47573", "CVE-2026-47571", "CVE-2026-47570", "CVE-2026-47559", "CVE-2026-47556", "CVE-2026-47555", "CVE-2026-47553", "CVE-2026-47551", "CVE-2026-47550", "CVE-2026-47548", "CVE-2026-47547", "CVE-2026-47546", "CVE-2026-47545", "CVE-2026-47543", "CVE-2026-47542", "CVE-2026-47540", "CVE-2026-47538", "CVE-2026-47537", "CVE-2026-47534", "CVE-2026-47533", "CVE-2026-47532", "CVE-2026-47531", "CVE-2026-47530", "CVE-2026-47529", "CVE-2026-47528", "CVE-2026-47527", "CVE-2026-47526", "CVE-2026-47525", "CVE-2026-47524", "CVE-2026-47523", "CVE-2026-47522", "CVE-2026-47518", "CVE-2026-47516", "CVE-2026-47515", "CVE-2026-47514", "CVE-2026-47513", "CVE-2026-47512", "CVE-2026-47509", "CVE-2026-47508", "CVE-2026-47507", "CVE-2026-47506", "CVE-2026-47505", "CVE-2026-47502", "CVE-2026-47500", "CVE-2026-47492"],
+        "fixed_in_version": "616.56"
+      },
+      {
+        "id": "5821",
+        "title": "GPU Display Driver - May 2026",
+        "published": "2026-05-19",
+        "severity": "high",
+        "max_cvss": 7.8,
+        "summary": "A program already running on the PC with ordinary user rights could take full control of it, read or change data, or crash it, through kernel-mode flaws in the GeForce driver for Windows. On the R580 branch only Maxwell, Volta and Pascal cards are affected.",
+        "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2026/5821/5821.md",
+        "cves": ["CVE-2026-24190", "CVE-2026-24191", "CVE-2026-24193", "CVE-2026-24182", "CVE-2025-33221"],
+        "fixed_in_version": "596.36"
+      },
       {
         "id": "5747",
         "title": "GPU Display Driver - January 2026",
@@ -148,7 +176,19 @@
         "fixed_in_version": "572.16"
       }
     ],
-    "amd": []
+    "amd": [
+      {
+        "id": "AMD-SB-6024",
+        "title": "AMD Graphics Driver Vulnerabilities - February 2026",
+        "published": "2026-02-10",
+        "severity": "high",
+        "max_cvss": 8.8,
+        "summary": "A program already running on the PC could take full control of it or crash it, through flaws in the Radeon graphics driver, its video firmware and the AMD software installer on Radeon RX cards.",
+        "bulletin_url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-6024.html",
+        "cves": ["CVE-2024-36324", "CVE-2024-36319", "CVE-2023-31323", "CVE-2025-48503", "CVE-2024-36320", "CVE-2025-48518", "CVE-2023-20548", "CVE-2023-31324", "CVE-2021-26381", "CVE-2024-36316"],
+        "fixed_in_version": "25.6.1"
+      }
+    ]
   },
 
   "nvidia": {
