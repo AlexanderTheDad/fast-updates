@@ -66,6 +66,46 @@
       "expires": "2026-11-23"
     },
     {
+      "id": "2026-10-23-time4popcorn-updater-flaw",
+      "date": "2026-10-23",
+      "kind": "problem",
+      "category": "security",
+      "status": "reported",
+      "headline": "Millions of PCs still run a forgotten Popcorn Time updater that an attacker could have hijacked",
+      "summary": "Researchers report that Time4Popcorn, an abandoned fork of Popcorn Time, leaves an updater running that downloads updates without encryption or signature checks, so whoever held its old web address could run code with full rights on about 3 million Windows PCs. The researchers took the address and pushed an update that switched the updater off. No attacks have been reported.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Eye Security",
+          "url": "https://labs.eye.security/cve-2026-30612-a-vulnerability-in-time4popcorn-popcorntime/"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/abandoned-popcorn-time-app-exposed-millions-of-device-to-rce-attacks/"
+        }
+      ],
+      "audience": "Anyone who installed Time4Popcorn, sold as Popcorn Time, on Windows, macOS or Android, even if it has not been opened in years. PCs without it are not affected.",
+      "action": "If Popcorn Time is installed, remove it in Settings > Apps > Installed apps.",
+      "expires": "2026-11-22"
+    },
+    {
+      "id": "2026-10-23-obs-studio-33",
+      "date": "2026-10-23",
+      "kind": "release",
+      "headline": "OBS Studio 33 updates browser sources and changes where plugins are installed",
+      "summary": "OBS Studio 33.0 moves browser sources and docks to a 2026 browser engine, gives plugins a new folder layout (plugins in the old folders keep loading until version 34), detects fullscreen games better in Game Capture and supports the newest NVIDIA Broadcast audio and video effects.",
+      "applies": [
+        "app:obs"
+      ],
+      "sources": [
+        {
+          "name": "OBS Studio 33.0 release notes",
+          "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0"
+        }
+      ],
+      "expires": "2026-11-06"
+    },
+    {
       "id": "2026-10-22-capcom-id-breach",
       "date": "2026-10-22",
       "kind": "problem",
