@@ -58,7 +58,8 @@
     "     Curated from NVIDIA PSIRT (github.com/NVIDIA/product-security) and AMD Product",
     "     Security. Each entry is a single vendor security bulletin that may bundle multiple",
     "     CVEs. FAST flags an advisory as unpatched when the user's installed driver is",
-    "     OLDER than fixed_in_version. Newer driver branches are assumed to forward-port",
+    "     OLDER than fixed_in_version, or for NVIDIA than its own branch's entry in",
+    "     fixed_in_branches (see the block's own comment). Newer driver branches are assumed to forward-port",
     "     the fix (NVIDIA's standard practice). The signal is separate from the gaming",
     "     recommendation - a user on the gaming-recommended driver may still see a",
     "     security warning if they are behind on bulletins, and vice versa.",
@@ -95,12 +96,17 @@
     "is kept by hand."
   ],
 
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
 
   "security_advisories": {
     "_comment": [
       "Severity is the highest CVSS v3.1 base score across the bundled CVEs in the bulletin.",
-      "FAST flags 'unpatched' when installed driver version < fixed_in_version.",
+      "NVIDIA fixed_in_branches (v10.0.1): the fix for every GeForce Windows branch the bulletin",
+      "lists, the highest across its CVEs in that branch, newest branch first. A driver in a listed",
+      "branch is compared with that branch's fix, the rule PC News uses (PcNews.NvidiaFixState).",
+      "It must include fixed_in_version, which older FAST versions read alone. Without it, or",
+      "for a driver between two listed branches, and for AMD: 'unpatched' when the installed",
+      "driver version < fixed_in_version.",
       "GeForce / Windows scope only - vGPU, Linux, Tesla, datacenter bulletins are excluded.",
       "Cross-vendor reference: NVIDIA PSIRT at github.com/NVIDIA/product-security.",
       "fixed_in_version is the fix in the NEWEST Game Ready branch the bulletin lists for GeForce",
@@ -118,7 +124,8 @@
         "summary": "A program already running on the PC with ordinary user rights could take full control of it, read or change data, or crash it, through 68 flaws in the GeForce driver for Windows, most of them in the kernel-mode layer.",
         "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2026/5861/5861.md",
         "cves": ["CVE-2026-47604", "CVE-2026-47603", "CVE-2026-47602", "CVE-2026-47601", "CVE-2026-47600", "CVE-2026-47597", "CVE-2026-47594", "CVE-2026-47593", "CVE-2026-47592", "CVE-2026-47590", "CVE-2026-47589", "CVE-2026-47586", "CVE-2026-47585", "CVE-2026-47584", "CVE-2026-47583", "CVE-2026-47582", "CVE-2026-47581", "CVE-2026-47580", "CVE-2026-47579", "CVE-2026-47578", "CVE-2026-47577", "CVE-2026-47576", "CVE-2026-47575", "CVE-2026-47573", "CVE-2026-47571", "CVE-2026-47570", "CVE-2026-47559", "CVE-2026-47556", "CVE-2026-47555", "CVE-2026-47553", "CVE-2026-47551", "CVE-2026-47550", "CVE-2026-47548", "CVE-2026-47547", "CVE-2026-47546", "CVE-2026-47545", "CVE-2026-47543", "CVE-2026-47542", "CVE-2026-47540", "CVE-2026-47538", "CVE-2026-47537", "CVE-2026-47534", "CVE-2026-47533", "CVE-2026-47532", "CVE-2026-47531", "CVE-2026-47530", "CVE-2026-47529", "CVE-2026-47528", "CVE-2026-47527", "CVE-2026-47526", "CVE-2026-47525", "CVE-2026-47524", "CVE-2026-47523", "CVE-2026-47522", "CVE-2026-47518", "CVE-2026-47516", "CVE-2026-47515", "CVE-2026-47514", "CVE-2026-47513", "CVE-2026-47512", "CVE-2026-47509", "CVE-2026-47508", "CVE-2026-47507", "CVE-2026-47506", "CVE-2026-47505", "CVE-2026-47502", "CVE-2026-47500", "CVE-2026-47492"],
-        "fixed_in_version": "616.56"
+        "fixed_in_version": "616.56",
+        "fixed_in_branches": ["616.56", "610.88", "582.78"]
       },
       {
         "id": "5821",
@@ -129,7 +136,8 @@
         "summary": "A program already running on the PC with ordinary user rights could take full control of it, read or change data, or crash it, through kernel-mode flaws in the GeForce driver for Windows. On the R580 branch only Maxwell, Volta and Pascal cards are affected.",
         "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2026/5821/5821.md",
         "cves": ["CVE-2026-24190", "CVE-2026-24191", "CVE-2026-24193", "CVE-2026-24182", "CVE-2025-33221"],
-        "fixed_in_version": "596.36"
+        "fixed_in_version": "596.36",
+        "fixed_in_branches": ["596.36", "582.53"]
       },
       {
         "id": "5747",
@@ -140,7 +148,8 @@
         "summary": "Kernel-mode driver flaws (use-after-free, integer overflow) in nvlddmkm.sys plus a NULL-pointer dereference in the HD Audio driver. Local low-privilege attacker could escalate to code execution, data tampering, or denial of service.",
         "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2026/5747/5747.md",
         "cves": ["CVE-2025-33217", "CVE-2025-33218", "CVE-2025-33237"],
-        "fixed_in_version": "591.59"
+        "fixed_in_version": "591.59",
+        "fixed_in_branches": ["591.59"]
       },
       {
         "id": "5703",
@@ -151,7 +160,8 @@
         "summary": "Multiple kernel-mode driver vulnerabilities affecting GeForce on Windows. Local privilege escalation, code execution, and information disclosure.",
         "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2025/5703/5703.md",
         "cves": ["CVE-2025-23309", "CVE-2025-23347", "CVE-2025-23352", "CVE-2025-23280", "CVE-2025-23282", "CVE-2025-23300", "CVE-2025-23330", "CVE-2025-23332", "CVE-2025-23345"],
-        "fixed_in_version": "581.42"
+        "fixed_in_version": "581.42",
+        "fixed_in_branches": ["581.42"]
       },
       {
         "id": "5670",
@@ -162,7 +172,8 @@
         "summary": "Twelve CVEs covering kernel-mode driver and user-mode component issues. Local attacker could achieve code execution and privilege escalation.",
         "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2025/5670/5670.md",
         "cves": ["CVE-2025-23276", "CVE-2025-23283", "CVE-2025-23284", "CVE-2025-23277", "CVE-2025-23278", "CVE-2025-23279", "CVE-2025-23281", "CVE-2025-23285", "CVE-2025-23286", "CVE-2025-23287", "CVE-2025-23288", "CVE-2025-23290"],
-        "fixed_in_version": "577.00"
+        "fixed_in_version": "577.00",
+        "fixed_in_branches": ["577.00"]
       },
       {
         "id": "5614",
@@ -173,7 +184,8 @@
         "summary": "Seven CVEs in the kernel-mode display driver. Local privilege escalation and information disclosure.",
         "bulletin_url": "https://github.com/NVIDIA/product-security/blob/main/2025/5614/5614.md",
         "cves": ["CVE-2024-0146", "CVE-2024-0150", "CVE-2024-0147", "CVE-2024-53869", "CVE-2024-53881", "CVE-2024-0131", "CVE-2024-0149"],
-        "fixed_in_version": "572.16"
+        "fixed_in_version": "572.16",
+        "fixed_in_branches": ["572.16"]
       }
     ],
     "amd": [
@@ -198,7 +210,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74"],
         "notes": {
@@ -214,7 +226,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74", "546.01"],
         "notes": {
@@ -231,7 +243,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74", "546.01", "537.58"],
         "notes": {
@@ -249,7 +261,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74", "546.01"],
         "notes": {
@@ -266,7 +278,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "Several users, mostly on RTX 50 cards, report the screen freezing or going black for a few seconds, usually while a video plays in Chrome or Edge, and say it stops after going back to 617.42; a few also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch. NVIDIA is collecting crash data but has not listed either as a known issue.",
+        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74"],
         "notes": {
