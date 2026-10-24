@@ -40,8 +40,31 @@
     "someone's problem unless its maker said so; never claim anything works with an anti-cheat;",
     "a single article or a rumour is not news; at most 20 live items."
   ],
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
   "items": [
+    {
+      "id": "2026-10-24-nvidia-621-01-video-freezes",
+      "date": "2026-10-24",
+      "kind": "problem",
+      "category": "stability",
+      "status": "confirmed",
+      "headline": "NVIDIA logs a bug in driver 621.01 that freezes or blacks out the screen while a video plays",
+      "summary": "NVIDIA has filed a bug for GeForce driver 621.01 after users reported the screen freezing or going black for several seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open. Most reports come from RTX 50 cards, the screen recovers without a restart, and NVIDIA has not said when a fix will ship.",
+      "applies": [
+        "gpu:nvidia"
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA 621.01 feedback thread",
+          "url": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/591981/geforce-grd-62101-feedback-thread-released-102126/"
+        },
+        {
+          "name": "VideoCardz",
+          "url": "https://videocardz.com/newz/nvidia-confirms-geforce-621-01-driver-bug-causing-video-freezes-and-black-screens"
+        }
+      ],
+      "expires": "2026-11-23"
+    },
     {
       "id": "2026-10-22-capcom-id-breach",
       "date": "2026-10-22",
