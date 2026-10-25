@@ -14,7 +14,12 @@
     "1A6C4-F685F-CC157-F7BCB",
     "D4A8F-995E3-84D5E-AED0B",
     "A4018-06498-26597-7C714",
-    { "key": "FAST-TECH-9X3D-ATD-2026", "reason": "replaced", "revoked_at": "2026-09-05" }
+    { "key": "FAST-TECH-9X3D-ATD-2026", "reason": "replaced", "revoked_at": "2026-09-05" },
+    { "key": "958B1-5695C-D9F53-5AF4C", "reason": "replaced", "revoked_at": "2026-10-25" },
+    { "key": "9B0921EE-53C14048-8820E916-B6AC9E4C", "reason": "replaced", "revoked_at": "2026-10-25" },
+    { "key": "94485-D6BF1-47FAB-391E6", "reason": "replaced", "revoked_at": "2026-10-25" },
+    { "key": "5F788-AACC6-9930A-C7C4E", "reason": "replaced", "revoked_at": "2026-10-25" },
+    { "key": "331D19FC-A96F4307-ADE0A934-358F4CED", "reason": "replaced", "revoked_at": "2026-10-25" }
   ],
-  "updated": "2026-09-05"
+  "updated": "2026-10-25"
 }
