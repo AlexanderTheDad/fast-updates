@@ -40,7 +40,7 @@
     "someone's problem unless its maker said so; never claim anything works with an anti-cheat;",
     "a single article or a rumour is not news; at most 20 live items."
   ],
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-25",
   "items": [
     {
       "id": "2026-10-24-nvidia-621-01-video-freezes",
@@ -154,6 +154,25 @@
       "audience": "Anyone running Plex Media Server version 1.43.2 or older on a PC or home server that can be reached from the internet. Watching through the Plex app alone is not affected.",
       "action": "Update Plex Media Server to the newest version from Plex.",
       "expires": "2026-11-19"
+    },
+    {
+      "id": "2026-10-13-steam-client-update",
+      "date": "2026-10-13",
+      "kind": "release",
+      "headline": "Steam's October client update starts faster and fixes hangs on some older CPUs",
+      "summary": "Valve's October 13 Steam client update makes Steam start faster, fixes the client hanging or crashing on some older CPUs when a game download begins, and adds a Big Art home screen and screensavers to Big Picture mode. A smaller October 21 update fixed a memory leak when streaming from a Windows PC with Remote Play using NVENC.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Steam Client Update - October 13th",
+          "url": "https://store.steampowered.com/news/app/593110/view/1846651706672667"
+        },
+        {
+          "name": "Steam Client Update - October 21st",
+          "url": "https://store.steampowered.com/news/app/593110/view/1847286114030478"
+        }
+      ],
+      "expires": "2026-10-27"
     },
     {
       "id": "2026-10-13-windows-shell-exploited-flaw",
