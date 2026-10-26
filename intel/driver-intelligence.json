@@ -93,10 +93,16 @@
     "latest_known_reports (per GPU family, and in the chipset block) plus last_updated, and",
     "since 2026-10-23 it ADDS new vendor bulletins to security_advisories (newest first). It",
     "never edits or removes an existing advisory. Everything else here, including the notes,",
-    "is kept by hand."
+    "is kept by hand.",
+    "",
+    "vendor_listed_issues and advanced_shader_delivery (added 2026-10-26) are kept by hand from",
+    "hardware-reference.md, like the notes. vendor_listed_issues holds an issue a vendor lists as",
+    "open in its own release notes against a setting FAST writes, with the releases checked.",
+    "DriverIntelligence shows it under the Hold verdict as a fact, never as a reason to move.",
+    "advanced_shader_delivery holds Microsoft's published driver minimums for one Hold bullet."
   ],
 
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-26",
 
   "security_advisories": {
     "_comment": [
@@ -375,5 +381,24 @@
       "latest_known_reports": "AMD lists one itself: the Ryzen provisioning package occasionally fails to install or upgrade. Nothing has been reported against it in the field yet.",
       "download_url": "https://www.amd.com/en/support/download/drivers.html"
     }
+  },
+  "vendor_listed_issues": {
+    "_comment": "Open issues a vendor lists in its own release notes against a setting FAST writes. Source: hardware-reference.md, section Prefer Maximum Performance. listed_open_in is every release whose notes were read and list the issue as open; not_listed_in is every release whose notes were read and do not list it. A release in neither list was not checked.",
+    "nvidia": [
+      {
+        "id": "6007998",
+        "summary": "Prefer Maximum Performance, which FAST sets for every NVIDIA card, may not be applied correctly",
+        "listed_open_in": [ "610.47", "610.88", "616.56", "616.64", "616.92", "617.42" ],
+        "not_listed_in": [ "617.14", "621.01" ],
+        "checked": "2026-10-26"
+      }
+    ]
+  },
+  "advanced_shader_delivery": {
+    "_comment": "Advanced Shader Delivery downloads precompiled shaders for Xbox PC app and Microsoft Store games that support it. Microsoft's published minimums (DirectX blog, 2026-10-21): Windows 11 24H2, NVIDIA 621.01 on RTX cards only, AMD Adrenalin 26.6.1. Source: hardware-reference.md, section Advanced Shader Delivery.",
+    "nvidia": "621.01",
+    "nvidia_rtx_only": true,
+    "amd": "26.6.1",
+    "checked": "2026-10-21"
   }
 }
