@@ -19,7 +19,8 @@
     { "key": "9B0921EE-53C14048-8820E916-B6AC9E4C", "reason": "replaced", "revoked_at": "2026-10-25" },
     { "key": "94485-D6BF1-47FAB-391E6", "reason": "replaced", "revoked_at": "2026-10-25" },
     { "key": "5F788-AACC6-9930A-C7C4E", "reason": "replaced", "revoked_at": "2026-10-25" },
-    { "key": "331D19FC-A96F4307-ADE0A934-358F4CED", "reason": "replaced", "revoked_at": "2026-10-25" }
+    { "key": "331D19FC-A96F4307-ADE0A934-358F4CED", "reason": "replaced", "revoked_at": "2026-10-25" },
+    { "key": "BCA34-AECAA-4210B-24EE5", "reason": "replaced", "revoked_at": "2026-10-27" }
   ],
-  "updated": "2026-10-25"
+  "updated": "2026-10-27"
 }
