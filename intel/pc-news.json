@@ -40,20 +40,70 @@
     "someone's problem unless its maker said so; never claim anything works with an anti-cheat;",
     "a single article or a rumour is not news; at most 20 live items."
   ],
-  "last_updated": "2026-10-25",
+  "last_updated": "2026-10-28",
   "items": [
+    {
+      "id": "2026-10-27-discord-public-server-messages-on-web",
+      "date": "2026-10-27",
+      "kind": "problem",
+      "category": "security",
+      "status": "confirmed",
+      "headline": "Discord will put messages from large public servers on the web, where search engines can find them",
+      "summary": "From November 16 every Discoverable Server, a publicly listed server with at least 1,000 members, gets a public web page with automatic chat summaries. From mid-December its public channel messages can appear there and in web search, without usernames or avatars. Private servers and DMs are left out, and it starts switched off in the EU, UK and four other countries.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Discord",
+          "url": "https://discord.com/blog/making-content-from-discoverable-servers-easier-to-discover"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/discord-to-let-search-engines-index-public-server-messages/"
+        }
+      ],
+      "audience": "Anyone who posts in a large public Discord server. Private servers, direct messages and the PC itself are not affected.",
+      "action": "To keep your future messages off these pages, turn off \"Show my message content from Discoverable channels on web pages\" in Discord under User Settings > Data and Privacy.",
+      "expires": "2026-11-06"
+    },
+    {
+      "id": "2026-10-26-emudhra-certificates-distrusted",
+      "date": "2026-10-26",
+      "kind": "problem",
+      "category": "security",
+      "status": "confirmed",
+      "headline": "Windows and browsers stop trusting eMudhra certificates after eight of its keys proved guessable",
+      "summary": "Researchers found eight signing keys from eMudhra, a certificate authority, so weak that anyone could recover them, which could have let an attacker fake a secure website or signed software. eMudhra revoked them, browsers are blocking them, and Microsoft has removed eMudhra's root certificates from the Windows trusted list. No misuse has been reported.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Microsoft KB5134133",
+          "url": "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5134133-windows-11-24h2-25h2-26h2-update"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates/"
+        }
+      ],
+      "audience": "Every Windows PC in principle. A PC that is online and keeps Windows and its browser updated gets the block automatically.",
+      "action": "Nothing to do on a PC that is online. Keep Windows and your browser updated.",
+      "expires": "2026-11-05"
+    },
     {
       "id": "2026-10-24-nvidia-621-01-video-freezes",
       "date": "2026-10-24",
       "kind": "problem",
       "category": "stability",
       "status": "confirmed",
-      "headline": "NVIDIA logs a bug in driver 621.01 that freezes or blacks out the screen while a video plays",
-      "summary": "NVIDIA has filed a bug for GeForce driver 621.01 after users reported the screen freezing or going black for several seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open. Most reports come from RTX 50 cards, the screen recovers without a restart, and NVIDIA has not said when a fix will ship.",
+      "headline": "NVIDIA's hotfix 621.12 fixes the 621.01 bug that freezes or blacks out the screen during video",
+      "summary": "NVIDIA confirmed a bug in GeForce driver 621.01 that freezes the screen or turns it black for several seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open. On October 27 NVIDIA released optional beta hotfix 621.12, which it says fixes it on RTX 50 cards. The screen recovers without a restart.",
       "applies": [
         "gpu:nvidia"
       ],
       "sources": [
+        {
+          "name": "NVIDIA hotfix 621.12",
+          "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5938"
+        },
         {
           "name": "NVIDIA 621.01 feedback thread",
           "url": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/591981/geforce-grd-62101-feedback-thread-released-102126/"
@@ -156,25 +206,6 @@
       "expires": "2026-11-19"
     },
     {
-      "id": "2026-10-13-steam-client-update",
-      "date": "2026-10-13",
-      "kind": "release",
-      "headline": "Steam's October client update starts faster and fixes hangs on some older CPUs",
-      "summary": "Valve's October 13 Steam client update makes Steam start faster, fixes the client hanging or crashing on some older CPUs when a game download begins, and adds a Big Art home screen and screensavers to Big Picture mode. A smaller October 21 update fixed a memory leak when streaming from a Windows PC with Remote Play using NVENC.",
-      "applies": [],
-      "sources": [
-        {
-          "name": "Steam Client Update - October 13th",
-          "url": "https://store.steampowered.com/news/app/593110/view/1846651706672667"
-        },
-        {
-          "name": "Steam Client Update - October 21st",
-          "url": "https://store.steampowered.com/news/app/593110/view/1847286114030478"
-        }
-      ],
-      "expires": "2026-10-27"
-    },
-    {
       "id": "2026-10-13-windows-shell-exploited-flaw",
       "date": "2026-10-13",
       "kind": "problem",
@@ -205,25 +236,6 @@
         ]
       },
       "expires": "2026-11-12"
-    },
-    {
-      "id": "2026-10-13-windows-11-24h2-home-pro-end-of-updates",
-      "date": "2026-10-13",
-      "kind": "release",
-      "headline": "Windows 11 24H2 Home and Pro no longer get updates, and 26H2 now reaches every 24H2 PC",
-      "summary": "Microsoft stopped monthly security and quality updates for the Home and Pro editions of Windows 11 version 24H2 on October 13, 2026. Version 26H2, the Windows 11 2026 Update, has now reached full availability through Windows Update for PCs on 24H2 and 25H2.",
-      "applies": [],
-      "sources": [
-        {
-          "name": "Windows release health",
-          "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
-        },
-        {
-          "name": "Windows message center",
-          "url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center"
-        }
-      ],
-      "expires": "2026-10-27"
     },
     {
       "id": "2026-09-30-nvidia-driver-security-bulletin",
