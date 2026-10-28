@@ -102,7 +102,7 @@
     "advanced_shader_delivery holds Microsoft's published driver minimums for one Hold bullet."
   ],
 
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-28",
 
   "security_advisories": {
     "_comment": [
@@ -216,7 +216,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
+        "latest_known_reports": "NVIDIA confirmed a bug where the screen freezes or goes black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards and the screen recovers without a restart. NVIDIA fixed it on 2026-10-27 in optional beta hotfix 621.12, and users say going back to 617.42 also stops it. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74"],
         "notes": {
@@ -232,7 +232,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
+        "latest_known_reports": "NVIDIA confirmed a bug where the screen freezes or goes black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards and the screen recovers without a restart. NVIDIA fixed it on 2026-10-27 in optional beta hotfix 621.12, and users say going back to 617.42 also stops it. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74", "546.01"],
         "notes": {
@@ -249,7 +249,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
+        "latest_known_reports": "NVIDIA confirmed a bug where the screen freezes or goes black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards and the screen recovers without a restart. NVIDIA fixed it on 2026-10-27 in optional beta hotfix 621.12, and users say going back to 617.42 also stops it. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74", "546.01", "537.58"],
         "notes": {
@@ -267,7 +267,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
+        "latest_known_reports": "NVIDIA confirmed a bug where the screen freezes or goes black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards and the screen recovers without a restart. NVIDIA fixed it on 2026-10-27 in optional beta hotfix 621.12, and users say going back to 617.42 also stops it. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74", "546.01"],
         "notes": {
@@ -284,7 +284,7 @@
         "latest_tested": "610.47",
         "latest_known": "621.01",
         "latest_known_released": "2026-10-21",
-        "latest_known_reports": "NVIDIA has logged a bug for the screen freezing or going black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards, the screen recovers without a restart, and users say it stops after going back to 617.42. NVIDIA has not given a fix date. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
+        "latest_known_reports": "NVIDIA confirmed a bug where the screen freezes or goes black for a few seconds while a video plays in Chrome, Edge or VLC, sometimes when a game starts with a video open; most reports come from RTX 50 cards and the screen recovers without a restart. NVIDIA fixed it on 2026-10-27 in optional beta hotfix 621.12, and users say going back to 617.42 also stops it. A few users also report S.T.A.L.K.E.R. 2 stuck on a black screen at launch.",
         "fallback": { "version": "595.97", "why": "the last driver before the 610 branch jump" },
         "avoid": ["610.74"],
         "notes": {
@@ -322,7 +322,7 @@
         "fallback": { "version": "25.3.1", "why": "the previous Adrenalin release" },
         "avoid": ["24.1.1", "23.12.1"],
         "notes": {
-          "26.3.1": "no known Fortnite regressions on RDNA 3, and FSR 4.1 is RX 9000-only so you lose nothing here. Not bench-tested by FAST - this pick tracks AMD's known-issues list, not our own A/B runs.",
+          "26.3.1": "no known Fortnite regressions on RDNA 3. Not bench-tested by FAST - this pick tracks AMD's known-issues list, not our own A/B runs.",
           "24.1.1": "black screens mid-game on RX 7900 cards.",
           "23.12.1": "Fortnite stutter-spikes while shaders compile."
         },
