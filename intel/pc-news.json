@@ -40,8 +40,54 @@
     "someone's problem unless its maker said so; never claim anything works with an anti-cheat;",
     "a single article or a rumour is not news; at most 20 live items."
   ],
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-10-29",
   "items": [
+    {
+      "id": "2026-10-29-chrome-search-hijacking-extensions",
+      "date": "2026-10-29",
+      "kind": "problem",
+      "category": "security",
+      "status": "reported",
+      "headline": "Hundreds of Chrome add-ons quietly sent users' web searches through their makers' servers",
+      "summary": "Researchers report 319 Chrome extensions, posing as PDF converters, manual finders, safe-search and AI search tools, that swap the browser's search engine and pass every search through servers their operators control before showing Bing or Yahoo results. Together they list about 13.4 million installs over ten years. Several outlets report most are no longer in the Chrome Web Store.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/chrome-extensions-with-134-million-installs-caught-hijacking-searches/"
+        },
+        {
+          "name": "GBHackers",
+          "url": "https://gbhackers.com/chrome-extensions-hijacking/"
+        },
+        {
+          "name": "Socket research",
+          "url": "https://socket.dev/blog/searchjacked"
+        }
+      ],
+      "audience": "Anyone who added a PDF, manual-finder, safe-search or AI search extension to Chrome. The PC itself is not otherwise affected.",
+      "action": "Open Chrome's extensions page and remove any add-on you do not recognise, then check that the search engine in Chrome's settings is the one you chose.",
+      "expires": "2026-11-08"
+    },
+    {
+      "id": "2026-10-28-windows-kb5127936-preview",
+      "date": "2026-10-28",
+      "kind": "release",
+      "headline": "Windows 11's optional October preview update widens Memory Integrity and fixes AMD HDMI audio",
+      "summary": "KB5127936, the optional preview for versions 25H2 and 26H2, says supported PCs may now have Memory Integrity (HVCI) switched on during updates. It also fixes HDMI and DisplayPort audio failing on certain AMD graphics cards and brings a refreshed Gaming Task View in Xbox mode.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Microsoft",
+          "url": "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5127936-windows-11-25h2-26h2-update"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5127936-update-released-with-41-changes-and-fixes/"
+        }
+      ],
+      "expires": "2026-11-11"
+    },
     {
       "id": "2026-10-27-discord-public-server-messages-on-web",
       "date": "2026-10-27",
@@ -177,6 +223,25 @@
       "audience": "Anyone with a CAPCOM ID account. The PC itself is not affected.",
       "action": "Be wary of emails or messages about your Capcom account, and do not open their links or attachments. Turning on two-factor sign-in where you can is a sensible precaution.",
       "expires": "2026-11-01"
+    },
+    {
+      "id": "2026-10-21-windows-11-26h2-full-availability",
+      "date": "2026-10-21",
+      "kind": "release",
+      "headline": "Windows 11 version 26H2 is now offered to every eligible PC running 24H2 or 25H2",
+      "summary": "Microsoft says the 26H2 rollout has reached full availability. It switches on features already delivered to 24H2 and 25H2, arrives as a small update that finishes with a single restart, and brings nothing new for games.",
+      "applies": [],
+      "sources": [
+        {
+          "name": "Microsoft release health",
+          "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
+        },
+        {
+          "name": "Windows Latest",
+          "url": "https://www.windowslatest.com/2026/10/27/microsoft-confirms-windows-11-26h2-is-now-available-for-everyone-and-it-installs-in-under-five-minutes/"
+        }
+      ],
+      "expires": "2026-11-04"
     },
     {
       "id": "2026-10-20-plex-media-server-plex2shell",
